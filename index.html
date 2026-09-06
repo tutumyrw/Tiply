@@ -32,7 +32,10 @@
     color: var(--ink);
     font-family: 'IBM Plex Mono', monospace;
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
+    align-items: flex-start;
+    gap: 90px;
     padding: 48px 16px 64px;
   }
 
@@ -257,6 +260,31 @@
     padding-top: 16px;
     letter-spacing: 0.04em;
   }
+
+  .guide {
+    width: 100%;
+    max-width: 340px;
+    margin: 0;
+    padding-top: 6px;
+    font-family: system-ui, -apple-system, sans-serif;
+    color: #cfc6a8;
+    line-height: 1.55;
+  }
+
+  .guide h2, .guide h3 {
+    font-family: 'Roboto Slab', serif;
+    color: var(--paper);
+    margin: 0 0 10px;
+  }
+
+  .guide h2 { font-size: 18px; margin-top: 0; }
+  .guide h3 { font-size: 15px; margin-top: 24px; }
+
+  .guide p { font-size: 14px; margin: 0 0 12px; }
+
+  .guide ul { margin: 0; padding-left: 18px; font-size: 14px; }
+  .guide li { margin-bottom: 8px; }
+  .guide li strong { color: var(--paper); }
 </style>
 </head>
 <body>
@@ -310,6 +338,22 @@
 
   <footer>THANK YOU, COME AGAIN</footer>
 </div>
+
+<article class="guide">
+  <h2>How to Calculate a Tip</h2>
+  <p>A tip is calculated by multiplying your bill amount by a percentage, then adding that on top of the total. This calculator does the math for you and can also split the final amount evenly between everyone at the table.</p>
+
+  <h3>Tipping norms around the world</h3>
+  <ul>
+    <li><strong>United States & Canada:</strong> 15–20% at restaurants is standard, and tipping is generally expected since it makes up a large part of service workers' income.</li>
+    <li><strong>United Kingdom & Europe:</strong> a service charge is often already included in the bill ("service compris"). If not, 5–10% is a common, optional amount.</li>
+    <li><strong>Latin America:</strong> many countries add a service charge (often around 10%) directly to the bill, so an extra tip is optional and usually smaller.</li>
+    <li><strong>Asia:</strong> tipping is uncommon in many countries and can occasionally be seen as unusual — it's worth checking local customs before adding one.</li>
+  </ul>
+
+  <h3>When to tip more (or less)</h3>
+  <p>Consider tipping above the standard rate for large groups, exceptional service, or during holidays. It's reasonable to tip less for poor service, though a modest tip is usually still appropriate rather than none at all in places where tipping is customary.</p>
+</article>
 
 <script>
   const billInput = document.getElementById('bill');
