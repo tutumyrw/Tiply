@@ -1,9 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head> <meta name="google-site-verification" content="E6HUBAOrATmJL4VRLz1FPJUETO7Wx0xIdEsqQR5qs0s" />
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Tip Calculator</title>
+<title>Free Tip Calculator - Split the Bill & Calculate Tips | Tiply</title>
+<meta name="description" content="Free online tip calculator. Instantly calculate the tip, total bill, and how much each person owes when splitting a check between friends.">
+<link rel="canonical" href="https://tutumyrw.github.io/Tiply/">
+ 
+<meta property="og:type" content="website">
+<meta property="og:title" content="Tiply - Free Tip Calculator">
+<meta property="og:description" content="Instantly calculate tips and split the bill between guests.">
+<meta property="og:url" content="https://tutumyrw.github.io/Tiply/">
+ 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;600;700&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -18,9 +27,9 @@
     --red: #a63a2c;
     --red-dark: #832c21;
   }
-
+ 
   * { box-sizing: border-box; }
-
+ 
   html, body {
     margin: 0;
     padding: 0;
@@ -35,10 +44,10 @@
     flex-wrap: wrap;
     justify-content: center;
     align-items: flex-start;
-    gap: 90px;
-    padding: 48px 16px 64px;
+    gap: 60px;
+    padding: 48px 24px 64px;
   }
-
+ 
   .ticket {
     width: 100%;
     max-width: 380px;
@@ -47,7 +56,7 @@
     box-shadow: 0 30px 60px -20px rgba(0,0,0,0.6), 0 2px 0 rgba(255,255,255,0.15) inset;
     padding: 0 26px 30px;
   }
-
+ 
   /* torn perforated top edge */
   .ticket::before {
     content: "";
@@ -59,7 +68,7 @@
     background-repeat: repeat-x;
     background-position: top;
   }
-
+ 
   header {
     display: flex;
     justify-content: space-between;
@@ -67,7 +76,7 @@
     padding: 18px 0 14px;
     border-bottom: 2px dashed var(--red);
   }
-
+ 
   header h1 {
     font-family: 'Roboto Slab', serif;
     font-size: 20px;
@@ -76,22 +85,22 @@
     margin: 0;
     color: var(--ink);
   }
-
+ 
   header .ticket-no {
     font-size: 12px;
     color: var(--ink-soft);
     white-space: nowrap;
   }
-
+ 
   section {
     padding: 18px 0;
     border-bottom: 1px dashed var(--paper-inset);
   }
-
+ 
   section:last-of-type {
     border-bottom: none;
   }
-
+ 
   .label {
     font-family: 'Roboto Slab', serif;
     font-size: 12px;
@@ -99,7 +108,7 @@
     color: var(--ink-soft);
     margin: 0 0 10px;
   }
-
+ 
   .bill-input {
     display: flex;
     align-items: baseline;
@@ -107,13 +116,13 @@
     border-bottom: 2px solid var(--ink);
     padding-bottom: 6px;
   }
-
+ 
   .bill-input .currency {
     font-size: 22px;
     font-weight: 600;
     color: var(--ink-soft);
   }
-
+ 
   .bill-input input {
     flex: 1;
     border: none;
@@ -126,16 +135,16 @@
     width: 100%;
     min-width: 0;
   }
-
+ 
   .bill-input input::placeholder { color: var(--paper-inset); }
-
+ 
   .pct-row {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 8px;
     margin-bottom: 10px;
   }
-
+ 
   .pct-btn {
     font-family: 'IBM Plex Mono', monospace;
     font-weight: 600;
@@ -148,15 +157,15 @@
     cursor: pointer;
     transition: background 0.15s, color 0.15s, transform 0.1s;
   }
-
+ 
   .pct-btn:hover { transform: translateY(-1px); }
-
+ 
   .pct-btn.active {
     background: var(--red);
     border-color: var(--red-dark);
     color: var(--paper);
   }
-
+ 
   .custom-pct {
     display: flex;
     align-items: center;
@@ -164,7 +173,7 @@
     font-size: 13px;
     color: var(--ink-soft);
   }
-
+ 
   .custom-pct input {
     width: 64px;
     font-family: 'IBM Plex Mono', monospace;
@@ -177,13 +186,13 @@
     padding: 6px 8px;
     outline: none;
   }
-
+ 
   .stepper {
     display: flex;
     align-items: center;
     gap: 16px;
   }
-
+ 
   .stepper button {
     width: 38px;
     height: 38px;
@@ -197,21 +206,21 @@
     cursor: pointer;
     line-height: 1;
   }
-
+ 
   .stepper button:active { transform: scale(0.95); }
-
+ 
   .stepper .count {
     font-size: 22px;
     font-weight: 600;
     min-width: 2ch;
     text-align: center;
   }
-
+ 
   .stepper .unit {
     font-size: 13px;
     color: var(--ink-soft);
   }
-
+ 
   .totals-row {
     display: flex;
     justify-content: space-between;
@@ -220,13 +229,13 @@
     color: var(--ink-soft);
     padding: 3px 0;
   }
-
+ 
   .totals-row span:last-child {
     font-family: 'IBM Plex Mono', monospace;
     font-weight: 600;
     color: var(--ink);
   }
-
+ 
   .grand {
     margin-top: 12px;
     background: var(--red);
@@ -239,20 +248,54 @@
     transform: rotate(-1deg);
     box-shadow: 0 6px 14px -6px rgba(0,0,0,0.5);
   }
-
+ 
   .grand .g-label {
     font-family: 'Roboto Slab', serif;
     font-weight: 700;
     font-size: 13px;
     letter-spacing: 0.03em;
   }
-
+ 
   .grand .g-value {
     font-family: 'IBM Plex Mono', monospace;
     font-weight: 700;
     font-size: 26px;
   }
-
+ 
+  .clear-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    width: 100%;
+    margin-top: 14px;
+    padding: 11px 0;
+    background: var(--paper-dark);
+    border: 1px solid var(--paper-inset);
+    border-radius: 6px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--ink);
+    cursor: pointer;
+    transition: background 0.15s, color 0.15s, border-color 0.15s;
+  }
+ 
+  .clear-btn:hover {
+    background: var(--red);
+    border-color: var(--red-dark);
+    color: var(--paper);
+  }
+ 
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    white-space: nowrap;
+  }
+ 
   footer {
     text-align: center;
     font-size: 11px;
@@ -260,12 +303,12 @@
     padding-top: 16px;
     letter-spacing: 0.04em;
   }
-
+ 
   footer a {
     color: var(--ink-soft);
     text-decoration: underline;
   }
-
+ 
   .guide {
     width: 100%;
     max-width: 340px;
@@ -275,31 +318,33 @@
     color: #cfc6a8;
     line-height: 1.55;
   }
-
+ 
   .guide h2, .guide h3 {
     font-family: 'Roboto Slab', serif;
     color: var(--paper);
     margin: 0 0 10px;
   }
-
+ 
   .guide h2 { font-size: 18px; margin-top: 0; }
   .guide h3 { font-size: 15px; margin-top: 24px; }
-
+ 
   .guide p { font-size: 14px; margin: 0 0 12px; }
-
+ 
   .guide ul { margin: 0; padding-left: 18px; font-size: 14px; }
   .guide li { margin-bottom: 8px; }
   .guide li strong { color: var(--paper); }
 </style>
 </head>
 <body>
-
+ 
 <div class="ticket">
   <header>
     <h1>Guest Check</h1>
     <span class="ticket-no">No. 042</span>
   </header>
-
+ 
+  <p class="sr-only">Free online tip calculator — calculate tip, total bill, and split payments between guests.</p>
+ 
   <section>
     <p class="label">Bill Amount</p>
     <div class="bill-input">
@@ -307,7 +352,7 @@
       <input type="number" inputmode="decimal" id="bill" placeholder="0.00" min="0" step="0.01">
     </div>
   </section>
-
+ 
   <section>
     <p class="label">Tip</p>
     <div class="pct-row" id="pctRow">
@@ -321,7 +366,7 @@
       <input type="number" id="customPct" placeholder="%" min="0" max="100">
     </div>
   </section>
-
+ 
   <section>
     <p class="label">Split Between</p>
     <div class="stepper">
@@ -331,7 +376,7 @@
       <span class="unit">guest(s)</span>
     </div>
   </section>
-
+ 
   <section>
     <div class="totals-row"><span>Tip</span><span id="tipOut">$0.00</span></div>
     <div class="totals-row"><span>Total with tip</span><span id="totalOut">$0.00</span></div>
@@ -339,15 +384,16 @@
       <span class="g-label">Per guest</span>
       <span class="g-value" id="perPersonOut">$0.00</span>
     </div>
+    <button id="clearBtn" class="clear-btn">↺ Clear all</button>
   </section>
-
+ 
   <footer>THANK YOU, COME AGAIN<br><a href="privacy.html">Privacy Policy</a></footer>
 </div>
-
+ 
 <article class="guide">
   <h2>How to Calculate a Tip</h2>
   <p>A tip is calculated by multiplying your bill amount by a percentage, then adding that on top of the total. This calculator does the math for you and can also split the final amount evenly between everyone at the table.</p>
-
+ 
   <h3>Tipping norms around the world</h3>
   <ul>
     <li><strong>United States & Canada:</strong> 15–20% at restaurants is standard, and tipping is generally expected since it makes up a large part of service workers' income.</li>
@@ -355,11 +401,11 @@
     <li><strong>Latin America:</strong> many countries add a service charge (often around 10%) directly to the bill, so an extra tip is optional and usually smaller.</li>
     <li><strong>Asia:</strong> tipping is uncommon in many countries and can occasionally be seen as unusual — it's worth checking local customs before adding one.</li>
   </ul>
-
+ 
   <h3>When to tip more (or less)</h3>
   <p>Consider tipping above the standard rate for large groups, exceptional service, or during holidays. It's reasonable to tip less for poor service, though a modest tip is usually still appropriate rather than none at all in places where tipping is customary.</p>
 </article>
-
+ 
 <script>
   const billInput = document.getElementById('bill');
   const customPct = document.getElementById('customPct');
@@ -370,26 +416,26 @@
   const tipOut = document.getElementById('tipOut');
   const totalOut = document.getElementById('totalOut');
   const perPersonOut = document.getElementById('perPersonOut');
-
+ 
   let selectedPct = 15;
   let guests = 1;
-
+ 
   function fmt(n) {
     return n.toLocaleString('en-US', { style: 'currency', currency: 'USD' });
   }
-
+ 
   function recalc() {
     const bill = parseFloat(billInput.value) || 0;
     const pct = parseFloat(customPct.value) || selectedPct;
     const tip = bill * (pct / 100);
     const total = bill + tip;
     const perPerson = total / guests;
-
+ 
     tipOut.textContent = fmt(tip);
     totalOut.textContent = fmt(total);
     perPersonOut.textContent = fmt(perPerson);
   }
-
+ 
   pctButtons.forEach(btn => {
     btn.addEventListener('click', () => {
       pctButtons.forEach(b => b.classList.remove('active'));
@@ -399,30 +445,41 @@
       recalc();
     });
   });
-
+ 
   customPct.addEventListener('input', () => {
     if (customPct.value !== '') {
       pctButtons.forEach(b => b.classList.remove('active'));
     }
     recalc();
   });
-
+ 
   minusBtn.addEventListener('click', () => {
     if (guests > 1) guests--;
     countEl.textContent = guests;
     recalc();
   });
-
+ 
   plusBtn.addEventListener('click', () => {
     if (guests < 50) guests++;
     countEl.textContent = guests;
     recalc();
   });
-
+ 
   billInput.addEventListener('input', recalc);
-
+ 
+  document.getElementById('clearBtn').addEventListener('click', () => {
+    billInput.value = '';
+    customPct.value = '';
+    guests = 1;
+    countEl.textContent = guests;
+    pctButtons.forEach(b => b.classList.remove('active'));
+    document.querySelector('.pct-btn[data-pct="15"]').classList.add('active');
+    selectedPct = 15;
+    recalc();
+  });
+ 
   recalc();
 </script>
-
+ 
 </body>
 </html>
