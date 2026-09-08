@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Frequently Asked Questions | Tiply</title>
+<meta name="description" content="Answers to common questions about tipping and how the Tiply tip calculator works.">
+<link rel="canonical" href="https://tutumyrw.github.io/Tiply/faq.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;600;700&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #20211d;
+    --paper: #e4d6ae;
+    --ink: #2b2620;
+    --ink-soft: #6b5f4c;
+    --red: #a63a2c;
+  }
+
+  * { box-sizing: border-box; }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+    background: var(--bg);
+    background-image: radial-gradient(ellipse at 50% -10%, rgba(255,255,255,0.05), transparent 60%);
+    font-family: system-ui, -apple-system, sans-serif;
+    display: flex;
+    justify-content: center;
+    padding: 48px 16px 80px;
+  }
+
+  .doc {
+    width: 100%;
+    max-width: 640px;
+    background: var(--paper);
+    color: var(--ink);
+    padding: 40px 36px 48px;
+    box-shadow: 0 30px 60px -20px rgba(0,0,0,0.6);
+  }
+
+  .doc::before {
+    content: "";
+    display: block;
+    height: 14px;
+    margin: -40px -36px 26px;
+    background-image: radial-gradient(circle at 10px 0, var(--bg) 7px, transparent 7.5px);
+    background-size: 20px 14px;
+    background-repeat: repeat-x;
+    background-position: top;
+  }
+
+  nav.pagenav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-bottom: 28px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+  }
+
+  nav.pagenav a {
+    color: var(--red);
+    text-decoration: none;
+    border-bottom: 1px dashed var(--red);
+  }
+
+  h1 {
+    font-family: 'Roboto Slab', serif;
+    font-size: 26px;
+    margin: 0 0 30px;
+  }
+
+  h2 {
+    font-family: 'Roboto Slab', serif;
+    font-size: 16px;
+    margin: 26px 0 8px;
+  }
+
+  p { font-size: 14.5px; line-height: 1.6; margin: 0 0 12px; }
+
+  a { color: var(--red); }
+</style>
+</head>
+<body>
+
+<div class="doc">
+  <nav class="pagenav">
+    <a href="index.html">Calculator</a>
+    <a href="guide.html">Tipping Guide</a>
+    <a href="faq.html">FAQ</a>
+    <a href="privacy.html">Privacy</a>
+  </nav>
+
+  <h1>Frequently Asked Questions</h1>
+
+  <h2>How is the tip calculated?</h2>
+  <p>Tiply multiplies your bill amount by the tip percentage you choose (or type in) to get the tip amount. That's added to the bill to get the total, which is then divided by the number of guests if you're splitting the check.</p>
+
+  <h2>Should I tip on the pre-tax or post-tax amount?</h2>
+  <p>Pre-tax is technically more "correct" since tax isn't part of the service being tipped, but in practice most people just tip on the total shown at the bottom of the receipt — either is fine, and the difference is usually small.</p>
+
+  <h2>Is tipping mandatory?</h2>
+  <p>In most places, no — it's a social custom rather than a legal requirement, though it can feel expected in countries where service workers rely on tips as part of their income, like the US. Some bills already include a mandatory service charge, in which case an additional tip is optional.</p>
+
+  <h2>What if the service was bad?</h2>
+  <p>It's reasonable to tip less for poor service. A very small or no tip does send a message, but in many cases a modest tip is still considered more appropriate than none at all, especially if the issue wasn't the server's fault (a kitchen delay, for example).</p>
+
+  <h2>Does Tiply save or store my data?</h2>
+  <p>No. Every calculation happens directly in your browser — the bill amount, tip percentage, and number of guests are never sent to or stored on any server. See the <a href="privacy.html">Privacy Policy</a> for details.</p>
+
+  <h2>Can I use Tiply with other currencies?</h2>
+  <p>The calculator currently displays amounts in US dollars, but the math works the same regardless of currency — just treat the number as whatever currency your bill is in.</p>
+
+  <p style="margin-top:32px;"><a href="index.html">← Back to the calculator</a></p>
+</div>
+
+</body>
+</html>
