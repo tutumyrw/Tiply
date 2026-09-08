@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+ 
+Sitemap: https://tutumyrw.github.io/Tiply/sitemap.xml
+ 
